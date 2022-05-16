@@ -1,4 +1,4 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
 import org.junit.Test;
 

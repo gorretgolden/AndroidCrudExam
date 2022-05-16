@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/golden/AndroidStudioProjects/AndroidFinals/app/src/main/res/layout/admin_login.xml" value="0.201" />
+        <entry key="..\:/Users/golden/AndroidStudioProjects/AndroidFinals/app/src/main/res/layout/all_students.xml" value="0.2289156626506024" />
+        <entry key="..\:/Users/golden/AndroidStudioProjects/AndroidFinals/app/src/main/res/layout/login_student.xml" value="0.25614754098360654" />
+        <entry key="..\:/Users/golden/AndroidStudioProjects/AndroidFinals/app/src/main/res/layout/register_student.xml" value="0.19144144144144143" />
+        <entry key="..\:/Users/golden/AndroidStudioProjects/AndroidFinals/app/src/main/res/layout/student_dashboard.xml" value="0.7291666666666666" />
         <entry key="..\:/Users/golden/Desktop/AndroidFinals/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15104166666666666" />
         <entry key="..\:/Users/golden/Desktop/AndroidFinals/app/src/main/res/drawable/button_shape.xml" value="0.17314814814814813" />
+        <entry key="..\:/Users/golden/Desktop/AndroidFinals/app/src/main/res/layout/admin_dashboard.xml" value="0.6462311557788945" />
+        <entry key="..\:/Users/golden/Desktop/AndroidFinals/app/src/main/res/layout/register_student.xml" value="0.3248638838475499" />
         <entry key="..\:/Users/golden/Desktop/AndroidFinals/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15104166666666666" />
       </map>
     </option>

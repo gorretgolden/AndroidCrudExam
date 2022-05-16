@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="FIRSTNAME LASTNAME"
+                android:text="Admin"
                 android:textAllCaps="true"
                 android:textColor="@color/purple_500"
                 android:textSize="16sp"
@@ -95,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:text="College Name"
+                android:text="admin@gmail.com"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
-                android:text="TODO LIST"
+                android:text="VIEW STUDENTS"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -182,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="CONTRIBUTE"
+                    android:text="Teachers"
                     android:textAllCaps="true"
                     android:textColor="@color/purple_500"
                     android:textSize="14sp"
@@ -217,19 +217,19 @@
                     android:id="@+id/image_view20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_account_balance_24"
-                    app:layout_constraintBottom_toTopOf="@+id/textView20"
+                    android:src="@drawable/ic_baseline_school_24"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewNewStudent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/textViewNewStudent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="PRACTICE"
+                    android:text="Add Students"
                     android:textAllCaps="true"
                     android:textColor="@color/purple_500"
                     android:textSize="14sp"
@@ -278,18 +278,18 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_baseline_library_books_24"
-                    app:layout_constraintBottom_toTopOf="@+id/textView21"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewAddCourses"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/textViewAddCourses"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="LEARN"
+                    android:text="Add courses"
                     android:textAllCaps="true"
                     android:textColor="@color/purple_500"
                     android:textSize="14sp"
@@ -299,6 +299,54 @@
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/image_view21" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/learnCard2"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:elevation="12dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_view22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewAddedCourses"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewAddedCourses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="View courses"
+                    android:textAllCaps="true"
+                    android:textColor="@color/purple_500"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_view22" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -337,7 +385,7 @@
                     android:id="@+id/image_view23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_help_center_24"
+                    android:src="@drawable/ic_baseline_account_circle_24"
                     app:layout_constraintBottom_toTopOf="@+id/textView23"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -349,7 +397,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="HELP"
+                    android:text="Add new admin"
                     android:textAllCaps="true"
                     android:textColor="@color/purple_500"
                     android:textSize="14sp"
@@ -384,7 +432,7 @@
                     android:id="@+id/image_view"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_settings_24"
+                    android:src="@drawable/ic_baseline_book_24"
                     app:layout_constraintBottom_toTopOf="@+id/textView4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -396,7 +444,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="SETTINGS"
+                    android:text="Add course units"
                     android:textAllCaps="true"
                     android:textColor="@color/purple_500"
                     android:textSize="14sp"

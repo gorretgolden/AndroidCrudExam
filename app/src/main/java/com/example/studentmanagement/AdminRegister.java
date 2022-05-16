@@ -1,18 +1,17 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminRegister extends AppCompatActivity {
 
-    TextView adminLoginTxt;
+    Button adminLoginTxt;
     Button adminRegister;
     EditText  name, email,password1,password2;
     DbHelper db;
@@ -24,20 +23,21 @@ public class AdminRegister extends AppCompatActivity {
 
 
         //targeting views
-        db = new DbHelper(this);
-        adminLoginTxt = findViewById(R.id.text_to_login);
+
+        adminLoginTxt = findViewById(R.id.adminLoginPage);
         adminRegister = findViewById(R.id.adminRegister);
         name = (EditText) findViewById(R.id.rname);
         email = (EditText) findViewById(R.id.remail);
         password1 = (EditText) findViewById(R.id.rpass1);
         password2 = (EditText) findViewById(R.id.rpass2);
+        db = new DbHelper(this);
 
 
         //event handlers
         adminLoginTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RegisterStudent.class);
+                Intent intent = new Intent(getApplicationContext(),AdminLogin.class);
                 startActivity(intent);
             }
         });
@@ -77,8 +77,8 @@ public class AdminRegister extends AppCompatActivity {
                                     Boolean is_inserted = db.RegisterAmin(admin_email,admin_name,admin_password);
                                     if(is_inserted==true){
                                         Toast.makeText(AdminRegister.this, "Successfully created a new admin account", Toast.LENGTH_SHORT).show();
-//                                        Intent intent = new Intent(getApplicationContext(),AdminLogin.class);
-//                                        startActivity(intent);
+                                        Intent intent = new Intent(getApplicationContext(),AdminLogin.class);
+                                        startActivity(intent);
                                     }
                                     else{
                                         Toast.makeText(AdminRegister.this, "Registration failed", Toast.LENGTH_SHORT).show();
@@ -108,12 +108,12 @@ public class AdminRegister extends AppCompatActivity {
 
 
 
-//        adminLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(),StudentList.class);
-//                startActivity(intent);
-//            }
-//        });
+        adminLoginTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AdminLogin.class);
+                startActivity(intent);
+            }
+        });
     }
 }

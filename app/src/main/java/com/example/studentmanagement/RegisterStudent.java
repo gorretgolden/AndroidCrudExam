@@ -1,6 +1,5 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ public class RegisterStudent extends AppCompatActivity {
     Button register ;
     EditText regno, name, email,address,password1,password2;
     DbHelper db;
-    TextView hasAccount;
+    TextView backtxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,7 @@ public class RegisterStudent extends AppCompatActivity {
         password1 = (EditText) findViewById(R.id.password1);
         password2 = (EditText) findViewById(R.id.password2);
         register = (Button) findViewById(R.id.register);
-        hasAccount = (TextView) findViewById(R.id.hasAccount);
+        backtxt = (TextView) findViewById(R.id.backtxt);
         db = new DbHelper(this);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -105,10 +104,11 @@ public class RegisterStudent extends AppCompatActivity {
                                });
 
 
-        hasAccount.setOnClickListener(new View.OnClickListener() {
+
+        backtxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LoginStudent.class);
+                Intent intent = new Intent(getApplicationContext(),AdminDashboard.class);
                 startActivity(intent);
             }
         });

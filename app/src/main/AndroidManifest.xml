@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.productcrudproject">
+    package="com.example.studentmanagement">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProductCrudProject">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.studentmanagement.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,14 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginStudent" android:label="Login"/>
-        <activity android:name=".RegisterStudent" android:label="Register"/>
-        <activity android:name=".StudentList" />
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".AdminRegister" />
-        <activity android:name=".StudentDashboard" />
-        <activity android:name=".AdminDashboard" />
-        <activity android:name=".AdminAddCourse" />
+        <activity android:name="com.example.studentmanagement.LoginStudent" android:label="Login"/>
+        <activity android:name="com.example.studentmanagement.RegisterStudent" android:label="Register Student"/>
+        <activity android:name="com.example.studentmanagement.StudentList" android:label="Students"/>
+        <activity android:name="com.example.studentmanagement.AdminLogin" android:label="Admin Login"/>
+        <activity android:name="com.example.studentmanagement.AdminRegister" android:label="Add New Admin"/>
+        <activity android:name="com.example.studentmanagement.StudentDashboard" />
+        <activity android:name="com.example.studentmanagement.AdminDashboard" />
+        <activity android:name="com.example.studentmanagement.AdminAddCourse"  android:label="Add New Courses"/>
+        <activity android:name=".StudentCourses" android:label="Student Courses"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         studentpage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RegisterStudent.class);
+                Intent intent = new Intent(getApplicationContext(),LoginStudent.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         admin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),AdminRegister.class);
+                Intent intent = new Intent(getApplicationContext(),AdminLogin.class);
                 startActivity(intent);
             }
         });

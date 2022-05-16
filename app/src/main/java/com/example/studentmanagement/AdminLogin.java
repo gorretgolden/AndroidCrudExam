@@ -1,4 +1,4 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ public class AdminLogin extends Activity {
 
     EditText email,password;
     Button adminLogin;
-    TextView text_to_register;
+    TextView backtohome;
     DbHelper db;
     ImageView back;
 
@@ -28,7 +28,7 @@ public class AdminLogin extends Activity {
         adminLogin = (Button) findViewById(R.id.adminLogin);
         email = (EditText) findViewById(R.id.loginemail);
         password = (EditText) findViewById(R.id.loginPassword);
-        text_to_register = (TextView) findViewById(R.id.text_to_register);
+        backtohome = (TextView) findViewById(R.id.backtohome);
         db = new DbHelper(this);
 
 
@@ -60,7 +60,7 @@ public class AdminLogin extends Activity {
 
                     }
                     else{
-                        Toast.makeText(AdminLogin.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AdminLogin.this, "Authentication failed, wrong admin credentials", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -69,22 +69,22 @@ public class AdminLogin extends Activity {
 
 
 
-        text_to_register.setOnClickListener(new View.OnClickListener() {
+        backtohome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent_register_page = new Intent(getApplicationContext(), AdminRegister.class);
-                startActivity(intent_register_page);
+                Intent home_page = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(home_page);
 
             }
         });
 
-
-
-//        back.setOnClickListener(new View.OnClickListener() {
+//
+//
+//        dashboard.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intent_register_page = new Intent(getApplicationContext(), MainActivity.class);
-//                startActivity(intent_register_page);
+//                Intent intent = new Intent(getApplicationContext(), AdminDashboard.class);
+//                startActivity(intent);
 //
 //            }
 //        });

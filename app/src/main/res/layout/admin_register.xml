@@ -135,11 +135,23 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             />
 
+        <Button
+            android:id="@+id/adminLoginPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alraedy have acount"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:layout_margin="20dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
+
         <TextView
             android:layout_width="match_parent"
             android:id="@+id/text_to_login"
             android:text="Already registered? | Login"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="70dp"

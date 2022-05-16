@@ -1,4 +1,4 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -15,11 +15,8 @@ import java.util.HashMap;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "students.db";
+    private static final String DB_NAME = "students_management.db";
     private static final int DB_VERSION  = 1;
-    private static final String KEY_NAME = "name";
-    private static final String KEY_LOC = "location";
-    private static final String KEY_DESG = "designation";
 
 
 
@@ -30,10 +27,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE students(student_regno INT PRIMARY KEY, student_name TEXT UNIQUE NOT NULL,student_address TEXT NOT NULL, student_email TEXT UNIQUE NOT NULL,student_password TEXT,course TEXT  NOT NULL, FOREIGN KEY(course_id) REFERENCES courses(id)) ");
+        db.execSQL("CREATE TABLE students(student_regno INT PRIMARY KEY, student_name TEXT UNIQUE NOT NULL,student_address TEXT NOT NULL, student_email TEXT UNIQUE NOT NULL,student_password TEXT) ");
         db.execSQL("CREATE TABLE admins(admin_email TEXT PRIMARY KEY  UNIQUE NOT NULL, admin_name TEXT UNIQUE NOT NULL, admin_password TEXT NOT NULL)");
         db.execSQL("CREATE TABLE courses(course_name TEXT PRIMARY KEY  UNIQUE NOT NULL, course_description TEXT UNIQUE NOT NULL,course_period TEXT NOT NULL)");
-        db.execSQL("CREATE TABLE course_units(unit_name TEXT PRIMARY KEY  UNIQUE NOT NULL, teacher TEXT UNIQUE NOT NULL,course_id INTEGER  NOT NULL, FOREIGN KEY(course_id) REFERENCES courses(id)),course TEXT  NOT NULL, FOREIGN KEY(course_id) REFERENCES courses(id)),students TEXT  NOT NULL, FOREIGN KEY(students) REFERENCES students(student_regno))");
+        db.execSQL("CREATE TABLE course_units(" +
+                "unit_name TEXT PRIMARY KEY  UNIQUE NOT NULL," +
+                "teacher TEXT UNIQUE NOT NULL," +
+                "course_id INTEGER  NOT NULL," +
+                "students TEXT  NOT NULL," +
+                "FOREIGN KEY(course_id) REFERENCES courses(id)," +
+                " FOREIGN KEY(students) REFERENCES students(student_regno))");
 
     }
 
@@ -64,7 +67,27 @@ public class DbHelper extends SQLiteOpenHelper {
         }
 
     }
-//new admins
+
+    //updating  student data
+//    public Boolean UpdateStudent(String student_regno,String student_email,String student_address,String student_password){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues cv = new ContentValues();
+//        cv.put("student_regno", student_regno);
+//        cv.put("student_email",student_email);
+//        cv.put("student_address",student_address);
+//        cv.put("student_password",student_password);
+//        Cursor cusrsor = db.rawQuery("SELECT  * FROM students WHERE student_regno = ?", new String[] {student_regno} );
+//
+//        long result = db.insert("students",null,cv);
+//        //testing the insertion
+//        if(result==-1){
+//            return  false;
+//        }else {
+//            return true;
+//        }
+//
+//    }
+////new admins
     public Boolean RegisterAmin(String admin_email,String admin_name,String admin_password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -223,7 +246,7 @@ public class DbHelper extends SQLiteOpenHelper {
 //        return studentList;
 //    }
 
-
+//student list
     @SuppressLint("Range")
     public ArrayList<HashMap<String, String>> getStudents(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -239,5 +262,21 @@ public class DbHelper extends SQLiteOpenHelper {
             studentList.add(student);
         }
         return  studentList;
+    }
+    //course list
+    @SuppressLint("Range")
+    public ArrayList<HashMap<String, String>> getCourses(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<HashMap<String, String>> courseList = new ArrayList<>();
+        String query = "SELECT course_name, course_description, course_period FROM "+ "courses";
+        Cursor cursor = db.rawQuery(query,null);
+        while (cursor.moveToNext()){
+            HashMap<String,String> course = new HashMap<>();
+            course.put("name",cursor.getString(cursor.getColumnIndex("course_name")));
+            course.put("description",cursor.getString(cursor.getColumnIndex("course_description")));
+            course.put("period",cursor.getString(cursor.getColumnIndex("course_period")));
+            courseList.add(course);
+        }
+        return  courseList;
     }
 }

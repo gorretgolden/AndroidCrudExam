@@ -1,6 +1,5 @@
-package com.example.productcrudproject;
+package com.example.studentmanagement;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,14 +64,14 @@ public class LoginStudent extends AppCompatActivity {
 
 
         //has no account
-
-        noAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),RegisterStudent.class);
-                startActivity(intent);
-            }
-        });
+//
+//        noAccount.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(),RegisterStudent.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
         backtohome.setOnClickListener(new View.OnClickListener() {
